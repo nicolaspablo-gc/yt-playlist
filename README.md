@@ -29,15 +29,13 @@ Personal YouTube playlist manager.
 4. For application type choose **Desktop app**
 5. Click **Create** — you'll get a client ID and client secret
 
-### 4. Publish the app (prevents token expiry)
+### 4. Add yourself as a test user (prevents token expiry)
 
-By default OAuth tokens for apps in "testing" mode expire after 7 days.
-To avoid re-authenticating periodically:
+Publishing the app requires Google verification (because External was chosen). You don't need to do that — instead, add your own account as a test user, which keeps tokens valid indefinitely without any verification process.
 
-1. Go to **APIs & Services** → **OAuth consent screen**
-2. Click **Publish App** → **Confirm**
-
-The app remains private (only your test users can use it), but tokens no longer expire.
+1. Go to **Google Auth Platform** → **Audience**
+2. Under **Test users**, add your Google account email
+3. Save
 
 ### 5. Configure credentials
 
@@ -50,7 +48,7 @@ Open `.env` and paste your client ID and client secret from step 3.
 ### 6. Install dependencies
 
 ```bash
-pip install -r requirements.txt
+uv sync
 ```
 
 ### 7. Authenticate
