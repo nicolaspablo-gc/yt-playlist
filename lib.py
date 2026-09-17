@@ -35,7 +35,7 @@ def read_remote(youtube, playlist_id):
             snippet = item["snippet"]
             video_id = snippet["resourceId"]["videoId"]
             title = snippet["title"]
-            availability = "deleted" if title in ("[Deleted video]", "[Private video]") else "available"
+            availability = "deleted" if title in ("[Deleted video]", "[Private video]", "Deleted video", "Private video") else "available"
             videos[video_id] = {
                 "url": f"https://youtube.com/watch?v={video_id}",
                 "title": title,
